@@ -111,7 +111,7 @@ with enterprise:
     class_type = st.radio(
         "Select the class type: \n\n",
         ["upskill", "language"],
-        key="creative_control",
+        key="class_type",
         horizontal=True,
     )
     if class_type == "language":
@@ -146,7 +146,7 @@ with enterprise:
     class_format = st.radio(
         "Select the class format: \n\n",
         ["offline", "online"],
-        key="creative_control",
+        key="class_format",
         horizontal=True,
     )
     learning_objective = st.text_input(
