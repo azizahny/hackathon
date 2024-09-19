@@ -83,10 +83,10 @@ enterprise, upskill = st.tabs(
     ["Enterprise", "Upskill"]
 )
 
-with Enterprise:
-  st.subheader("Upskill syllabus generator")
+with enterprise:
+    st.subheader("Upskill syllabus generator")
 
-  selected_model = st.radio(
+    selected_model = st.radio(
         "Select Gemini Model:",
         [gemini_15_flash, gemini_15_pro],
         format_func=get_model_name,
@@ -94,26 +94,26 @@ with Enterprise:
         horizontal=True,
     )
 
-    # Upskill Syllabus Questionaire
+    # Upskill Syllabus Questionnaire
 
     company_name = st.text_input(
-      "Enter company name: \n\n", key="company_name", value="Company Name"
+        "Enter company name: \n\n", key="company_name", value="Company Name"
     )
     company_industry = st.text_input(
-      "Enter company industry: \n\n", key="company_industry", value="Company Industry"
+        "Enter company industry: \n\n", key="company_industry", value="Company Industry"
     )
     job_title = st.text_input(
-      "Enter job title: \n\n", key="job_title", value="Job Title"
+        "Enter job title: \n\n", key="job_title", value="Job Title"
     )
     job_level = st.text_input(
-      "Enter job level: \n\n", key="job_level", value="Job Level"
+        "Enter job level: \n\n", key="job_level", value="Job Level"
     )
     class_type = st.radio(
-            "Select the class type: \n\n",
-            ["upskill", "language"],
-            key="creative_control",
-            horizontal=True,
-        )
+        "Select the class type: \n\n",
+        ["upskill", "language"],
+        key="creative_control",
+        horizontal=True,
+    )
     if class_type == "language":
         language_class = st.multiselect(
             "What is the language that you need? (can select multiple) \n\n",
@@ -127,42 +127,42 @@ with Enterprise:
             key="language_skill"
         )
     elif class_type == "upskill":
-     upskill_class = st.multiselect(
-        "What is the upskill scope that you need? (can select multiple) \n\n",
-        [
-           "Business & Management",
-            "Media & Creative",
-            "Tourism & Hospitality",
-            "Language,
-            "Engineering",
-            "Technology",
-            "Career & Development",
-            "Agriculture",
-            "Green & Sustainability",
-            "Education",
-        ],
-        key="upskill_class"
-    )
-    class_format = st.radio(
-            "Select the class format: \n\n",
-            ["offline", "online"],
-            key="creative_control",
-            horizontal=True,
+        upskill_class = st.multiselect(
+            "What is the upskill scope that you need? (can select multiple) \n\n",
+            [
+                "Business & Management",
+                "Media & Creative",
+                "Tourism & Hospitality",
+                "Language",
+                "Engineering",
+                "Technology",
+                "Career & Development",
+                "Agriculture",
+                "Green & Sustainability",
+                "Education",
+            ],
+            key="upskill_class"
         )
+    class_format = st.radio(
+        "Select the class format: \n\n",
+        ["offline", "online"],
+        key="creative_control",
+        horizontal=True,
+    )
     learning_objective = st.text_input(
-      "Enter your goal with this course: \n\n", key="learning_objective", value="Job Level"
+        "Enter your goal with this course: \n\n", key="learning_objective", value="Job Level"
     )
 
     prompt = f"""
-    Write a comprehensive syllabus on the folllowing premise:
+    Write a comprehensive syllabus on the following premise:
     \n 
-    company_industry:{company_industry}\n
-    job_title:{job_title} \n
+    company_industry: {company_industry}\n
+    job_title: {job_title} \n
     job_level: {job_level} \n
     If the class_type: {class_type} then create upskill recommendation syllabus based on {upskill_class} type \n
     If the class_type: {class_type} then create language recommendation syllabus based on {language_class} type \n
     Provide a clear introduction to the course, outlining its objectives, learning outcomes, and the skills students will acquire.
-    Divide the course into logical sections or modules. Each module should cover specific topics detail and include subtopics as needed. Ensure the order of topics is coherent and follows a natural progression of learning.
+    Divide the course into logical sections or modules. Each module should cover specific topics in detail and include subtopics as needed. Ensure the order of topics is coherent and follows a natural progression of learning.
     Specify the types of assessments (e.g., quizzes, assignments, projects) and how they align with learning outcomes. Include a grading rubric or percentage breakdown.      
     Provide a list of textbooks, articles, or other materials that students need to review. Include both mandatory and supplementary readings.
     Highlight any practical activities, labs, or case studies included in the syllabus to deepen understanding of the subject.
