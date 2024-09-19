@@ -15,8 +15,11 @@ from vertexai.generative_models import (
     Part,
 )
 
-PROJECT_ID = os.environ.get("GCP_PROJECT")
-LOCATION = os.environ.get("GCP_REGION")
+# PROJECT_ID = os.environ.get("GCP_PROJECT")
+# LOCATION = os.environ.get("GCP_REGION")
+
+PROJECT_ID = os.environ.get("hackathon-435409")
+LOCATION = os.environ.get("us-central1")
 
 vertexai.init(project=PROJECT_ID, location=LOCATION)
 
