@@ -114,6 +114,10 @@ with enterprise:
         key="class_type",
         horizontal=True,
     )
+
+    language_class = []
+    upskill_class = []
+    
     if class_type == "language":
         language_class = st.multiselect(
             "What is the language that you need? (can select multiple) \n\n",
