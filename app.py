@@ -124,7 +124,7 @@ with enterprise:
                 "Korean",
                 "Bahasa Indonesia",
             ],
-            key="language_skill"
+            key="language_class"
         )
     elif class_type == "upskill":
         upskill_class = st.multiselect(
