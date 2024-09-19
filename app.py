@@ -159,8 +159,8 @@ with enterprise:
     company_industry: {company_industry}\n
     job_title: {job_title} \n
     job_level: {job_level} \n
-    If the class_type: {class_type} then create upskill recommendation syllabus based on {upskill_class} type \n
-    If the class_type: {class_type} then create language recommendation syllabus based on {language_class} type \n
+    upskill type: {upskill_class} \n
+    language class: {language_class} \n
     Provide a clear introduction to the course, outlining its objectives, learning outcomes, and the skills students will acquire.
     Divide the course into logical sections or modules. Each module should cover specific topics in detail and include subtopics as needed. Ensure the order of topics is coherent and follows a natural progression of learning.
     Specify the types of assessments (e.g., quizzes, assignments, projects) and how they align with learning outcomes. Include a grading rubric or percentage breakdown.      
